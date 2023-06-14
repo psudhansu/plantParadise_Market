@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -50,9 +51,11 @@ public class Orders {
 	private Double totalCost;
 
 	@ManyToOne
+
 	private Customer customer;
 	
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "orders")
+	
 	private List<Planter> planterList= new ArrayList<>();
 	
 }

@@ -1,5 +1,6 @@
 package com.plantparadisemarket.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -66,7 +67,7 @@ public class Seed {
 	@NotNull	
 	private Integer seedsPerPacket;
 	
-	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER)
 	private Planter planter;
 	
 }

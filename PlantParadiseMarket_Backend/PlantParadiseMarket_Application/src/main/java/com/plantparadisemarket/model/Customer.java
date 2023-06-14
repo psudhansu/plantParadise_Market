@@ -4,6 +4,7 @@ package com.plantparadisemarket.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -38,7 +39,7 @@ public class Customer {
 	@NotBlank
 	@NotNull
 	@NotEmpty
-	@Size(min = 3)
+	@Size(min = 2)
 	private String customerName;
 	
 	@Email
@@ -50,8 +51,9 @@ public class Customer {
 	@NotBlank
 	@NotNull
 	@NotEmpty
-	@Size(min = 3)
-	private String userName;
+	@Column(unique = true)
+	@Pattern(regexp = "^[6-9]\\d{9}$")
+	private String phoneNo;
 	
 	
 	@NotBlank
@@ -64,10 +66,9 @@ public class Customer {
 	@Embedded
 	private Address address;
 	
-	@ManyToOne
-	private Admin admin;
 	
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "customer")
+	@JsonIgnore
 	private List<Orders> orderList= new ArrayList<>();
 	
 	

@@ -1,5 +1,6 @@
 package com.plantparadisemarket.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -56,12 +57,15 @@ public class Planter {
 	private Integer planterCost;
 	
 	@ManyToOne
+	@JsonIgnore
 	private Orders orders;
 	
 	@OneToOne(mappedBy = "planter",cascade = CascadeType.ALL)
+	@JsonIgnore
 	private Plant plant;
 	
 	@OneToOne(mappedBy = "planter",cascade = CascadeType.ALL)
+	@JsonIgnore
 	private Seed seed;
 	
 }

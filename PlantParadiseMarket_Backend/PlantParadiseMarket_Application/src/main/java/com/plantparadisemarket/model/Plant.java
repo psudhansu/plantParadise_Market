@@ -66,7 +66,7 @@ public class Plant {
 	@NotNull
 	private double plantCost;
 	
-	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER)
 	private Planter planter;
 	
 }
