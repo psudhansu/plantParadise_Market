@@ -5,15 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,46 +22,51 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Planter {
+public class Plant {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonProperty(access = Access.READ_ONLY)
-	private int planterId;
+	private Integer plantId;
+
+	@NotNull
+	private Integer plantHeight;
 	
 	@NotNull
-	@Min(value =1, message =  "Minimum height should be 1 feet")
-	private Float planterHeight;
-	
-	@NotNull
-	private Integer planterCapacity;
-	
-	@NotNull
-	private Integer drinageHole;
-	
-	@NotNull
-	@NotEmpty
 	@NotBlank
-	private String planterColor;
-	
-	@NotNull
 	@NotEmpty
+	private String commonName;
+
+	@NotNull
 	@NotBlank
-	private String planterShape;
+	@NotEmpty
+	private String bloomTime;
+
+	@NotNull
+	@NotBlank
+	@NotEmpty
+	private String medicinalOrCulinaryUse;
+
+	@NotNull
+	@NotBlank
+	@NotEmpty
+	private String temperature;
+
+	@NotNull
+	@NotBlank
+	@NotEmpty
+	private String typeOfPlant;
+
+	@NotNull
+	@NotBlank
+	@NotEmpty
+	@Size(min = 10)
+	private String plantDescription;
 	
 	@NotNull
-	private Integer planterStock;
+	private double plantCost;
 	
-	@NotNull
-	private Integer planterCost;
-	
-	@ManyToOne
-	private Orders orders;
-	
-	@OneToOne(mappedBy = "planter",cascade = CascadeType.ALL)
-	private Plant plant;
-	
-	@OneToOne(mappedBy = "planter",cascade = CascadeType.ALL)
-	private Seed seed;
+	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	private Planter planter;
 	
 }

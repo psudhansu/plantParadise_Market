@@ -5,15 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,46 +22,51 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Planter {
+public class Seed {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonProperty(access = Access.READ_ONLY)
-	private int planterId;
+	private Integer seedId;
 	
 	@NotNull
-	@Min(value =1, message =  "Minimum height should be 1 feet")
-	private Float planterHeight;
-	
-	@NotNull
-	private Integer planterCapacity;
-	
-	@NotNull
-	private Integer drinageHole;
-	
-	@NotNull
-	@NotEmpty
 	@NotBlank
-	private String planterColor;
-	
-	@NotNull
 	@NotEmpty
+	private String commonName;
+	
+	
+	@NotNull
 	@NotBlank
-	private String planterShape;
+	@NotEmpty
+	private String bloomTime;
+	
 	
 	@NotNull
-	private Integer planterStock;
+	@NotBlank
+	@NotEmpty
+	private String watering;
+	
 	
 	@NotNull
-	private Integer planterCost;
+	@NotBlank
+	@NotEmpty
+	private String typeOfSeeds;
 	
-	@ManyToOne
-	private Orders orders;
 	
-	@OneToOne(mappedBy = "planter",cascade = CascadeType.ALL)
-	private Plant plant;
+	@NotNull
+	@NotBlank
+	@NotEmpty
+	@Size(min = 10)
+	private String seedsDescription;
 	
-	@OneToOne(mappedBy = "planter",cascade = CascadeType.ALL)
-	private Seed seed;
+	
+	@NotNull	
+	private double seedsCost;
+	
+	@NotNull	
+	private Integer seedsPerPacket;
+	
+	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	private Planter planter;
 	
 }
