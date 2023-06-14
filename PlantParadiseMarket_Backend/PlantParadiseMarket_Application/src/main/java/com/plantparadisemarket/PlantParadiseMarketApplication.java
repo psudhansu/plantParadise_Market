@@ -1,13 +1,13 @@
-package com.masai;
+package com.plantparadisemarket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NurseryAppApplication {
+public class PlantParadiseMarketApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NurseryAppApplication.class, args);
+		SpringApplication.run(PlantParadiseMarketApplication.class, args);
 	}
 
 }

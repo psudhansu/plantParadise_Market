@@ -1,10 +1,10 @@
-package com.masai;
+package com.plantparadisemarket;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NurseryAppApplicationTests {
+class PlantParadiseMarketApplicationTests {
 
 	@Test
 	void contextLoads() {
