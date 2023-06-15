@@ -69,6 +69,7 @@ public class Customer {
 	@Embedded
 	private Address address;
 	
+    
 	
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "customer")
 	@JsonIgnore
