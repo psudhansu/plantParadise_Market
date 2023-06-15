@@ -41,5 +41,13 @@ public class GlobalExceptionHandler {
 	  return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_GATEWAY);
   }
   
+  @ExceptionHandler(PlantException.class)
+  public ResponseEntity<MyErrorDetails> PlantExceptionHandeler(PlantException ex,WebRequest req){
+	  MyErrorDetails err = new MyErrorDetails();
+	  err.setTimeStamp(LocalDate.now());
+	  err.setMessage(ex.getMessage());
+	  err.setDetails(req.getDescription(false));
+	  return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_GATEWAY);
+  }
   
 }
