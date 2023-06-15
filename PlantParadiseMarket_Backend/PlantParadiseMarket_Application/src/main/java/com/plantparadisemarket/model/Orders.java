@@ -55,7 +55,6 @@ public class Orders {
 	private Customer customer;
 	
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "orders")
-	
 	private List<Planter> planterList= new ArrayList<>();
 	
 }
