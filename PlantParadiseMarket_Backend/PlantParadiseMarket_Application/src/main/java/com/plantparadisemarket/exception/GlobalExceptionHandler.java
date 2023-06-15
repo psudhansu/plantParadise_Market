@@ -41,5 +41,11 @@ public class GlobalExceptionHandler {
 	  return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_GATEWAY);
   }
   
+  @ExceptionHandler(SeedException.class)
+  public ResponseEntity<String> notFound(SeedException se){
+	  
+	  return new ResponseEntity<String>(se.getMessage(),HttpStatus.BAD_GATEWAY);
+  }
+  
   
 }
