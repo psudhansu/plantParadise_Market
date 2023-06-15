@@ -67,5 +67,93 @@ public class Planter {
 	@OneToOne(mappedBy = "planter",cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Seed seed;
+
+	public int getPlanterId() {
+		return planterId;
+	}
+
+	public void setPlanterId(int planterId) {
+		this.planterId = planterId;
+	}
+
+	public Float getPlanterHeight() {
+		return planterHeight;
+	}
+
+	public void setPlanterHeight(Float planterHeight) {
+		this.planterHeight = planterHeight;
+	}
+
+	public Integer getPlanterCapacity() {
+		return planterCapacity;
+	}
+
+	public void setPlanterCapacity(Integer planterCapacity) {
+		this.planterCapacity = planterCapacity;
+	}
+
+	public Integer getDrinageHole() {
+		return drinageHole;
+	}
+
+	public void setDrinageHole(Integer drinageHole) {
+		this.drinageHole = drinageHole;
+	}
+
+	public String getPlanterColor() {
+		return planterColor;
+	}
+
+	public void setPlanterColor(String planterColor) {
+		this.planterColor = planterColor;
+	}
+
+	public String getPlanterShape() {
+		return planterShape;
+	}
+
+	public void setPlanterShape(String planterShape) {
+		this.planterShape = planterShape;
+	}
+
+	public Integer getPlanterStock() {
+		return planterStock;
+	}
+
+	public void setPlanterStock(Integer planterStock) {
+		this.planterStock = planterStock;
+	}
+
+	public Integer getPlanterCost() {
+		return planterCost;
+	}
+
+	public void setPlanterCost(Integer planterCost) {
+		this.planterCost = planterCost;
+	}
+
+	public Orders getOrders() {
+		return orders;
+	}
+
+	public void setOrders(Orders orders) {
+		this.orders = orders;
+	}
+
+	public Plant getPlant() {
+		return plant;
+	}
+
+	public void setPlant(Plant plant) {
+		this.plant = plant;
+	}
+
+	public Seed getSeed() {
+		return seed;
+	}
+
+	public void setSeed(Seed seed) {
+		this.seed = seed;
+	}
 	
 }
