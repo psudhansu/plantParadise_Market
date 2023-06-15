@@ -66,7 +66,6 @@ public class Customer {
 	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=])[a-zA-Z\\d@#$%^&+=]{5,16}$")
 	private String password;
 	
-	
 	@Embedded
 	private Address address;
 	
