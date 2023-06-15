@@ -33,7 +33,7 @@ public class GlobalExceptionHandler {
   }
   
   @ExceptionHandler(Exception.class)
-  public ResponseEntity<MyErrorDetails> parentExceptionHandler(Exception ex,WebRequest req){
+  public ResponseEntity<MyErrorDetails> notFound(Exception ex,WebRequest req){
 	  MyErrorDetails err = new MyErrorDetails();
 	  err.setTimeStamp(LocalDate.now());
 	  err.setMessage(ex.getMessage());
@@ -41,19 +41,5 @@ public class GlobalExceptionHandler {
 	  return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_GATEWAY);
   }
   
-  @ExceptionHandler(SeedException.class)
-  public ResponseEntity<String> notFound(SeedException se){
-	  
-	  return new ResponseEntity<String>(se.getMessage(),HttpStatus.BAD_GATEWAY);
-  }
-  
-  @ExceptionHandler(CustomerException.class)
-  public ResponseEntity<MyErrorDetails> customerExceptionHandler(CustomerException ex,WebRequest req){
-	  MyErrorDetails err = new MyErrorDetails();
-	  err.setTimeStamp(LocalDate.now());
-	  err.setMessage(ex.getMessage());
-	  err.setDetails(req.getDescription(false));
-	  return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_GATEWAY);
-  }
   
 }
