@@ -49,13 +49,19 @@ public class Orders {
 	
 	@NotNull
 	private Double totalCost;
+	
+	@NotNull
+	private OrderStatus orderStatus;
 
 	@ManyToOne
-
 	private Customer customer;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "orders")
-	
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<Planter> planterList= new ArrayList<>();
 	
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	private List<Plant> plantList = new ArrayList<>();
+	
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	private List<Seed> seedList = new ArrayList<>();
 }

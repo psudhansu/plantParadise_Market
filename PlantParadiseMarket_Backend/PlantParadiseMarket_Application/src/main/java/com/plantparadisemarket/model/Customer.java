@@ -3,6 +3,7 @@ package com.plantparadisemarket.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -25,15 +26,18 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-public class Customer {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Customer extends Users{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonProperty(access = Access.READ_ONLY)
 	private int customerId;
 	
 	@NotBlank
@@ -55,12 +59,6 @@ public class Customer {
 	@Pattern(regexp = "^[6-9]\\d{9}$")
 	private String phoneNo;
 	
-	
-	@NotBlank
-	@NotNull
-	@NotEmpty
-	@Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\\\S+$).{5,}$")
-	private String password;
 	
 	
 	@Embedded
