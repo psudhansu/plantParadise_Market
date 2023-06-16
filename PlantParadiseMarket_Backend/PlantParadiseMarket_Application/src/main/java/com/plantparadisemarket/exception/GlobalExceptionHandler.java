@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(MethodArgumentNotValidException.class)
   public ResponseEntity<MyErrorDetails> notFound(MethodArgumentNotValidException me){
 	  MyErrorDetails err = new MyErrorDetails();
-	  err.setTimeStamp(LocalDate.now());
+	  err.setTimeStamp(LocalDateTime.now());
 	  err.setMessage(me.getMessage());
 	  err.setDetails(me.getBindingResult().getFieldError().getDefaultMessage());
 	  return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_GATEWAY);
@@ -26,7 +26,7 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(NoHandlerFoundException.class)
   public ResponseEntity<MyErrorDetails> handleNotFoundException(NoHandlerFoundException ex,WebRequest req) {
 	  MyErrorDetails err = new MyErrorDetails();
-	  err.setTimeStamp(LocalDate.now());
+	  err.setTimeStamp(LocalDateTime.now());
 	  err.setMessage(ex.getMessage());
 	  err.setDetails(req.getDescription(false));
       return new ResponseEntity<MyErrorDetails>(err, HttpStatus.NOT_FOUND);
@@ -35,7 +35,7 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(Exception.class)
   public ResponseEntity<MyErrorDetails> parentExceptionHandler(Exception ex,WebRequest req){
 	  MyErrorDetails err = new MyErrorDetails();
-	  err.setTimeStamp(LocalDate.now());
+	  err.setTimeStamp(LocalDateTime.now());
 	  err.setMessage(ex.getMessage());
 	  err.setDetails(req.getDescription(false));
 	  return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_GATEWAY);
@@ -44,10 +44,21 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(CustomerException.class)
   public ResponseEntity<MyErrorDetails> customerExceptionHandler(CustomerException ex,WebRequest req){
 	  MyErrorDetails err = new MyErrorDetails();
-	  err.setTimeStamp(LocalDate.now());
+	  err.setTimeStamp(LocalDateTime.now());
 	  err.setMessage(ex.getMessage());
 	  err.setDetails(req.getDescription(false));
 	  return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_GATEWAY);
   }
+  
+  @ExceptionHandler(AdminException.class)
+  public ResponseEntity<MyErrorDetails> adminExceptionHandler(AdminException ex,WebRequest req){
+	  MyErrorDetails err = new MyErrorDetails();
+	  err.setTimeStamp(LocalDateTime.now());
+	  err.setMessage(ex.getMessage());
+	  err.setDetails(req.getDescription(false));
+	  return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_GATEWAY);
+  }
+  
+  
   
 }

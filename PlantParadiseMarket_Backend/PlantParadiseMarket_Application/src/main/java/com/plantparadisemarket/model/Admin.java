@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -36,12 +37,13 @@ public class Admin {
 	@NotBlank
 	@NotEmpty
 	@NotNull
+	@Column(unique = true)
 	private String username;
 	
 	@NotBlank
 	@NotEmpty
 	@NotNull
-	@Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\\\S+$).{5,}$")
+	@Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\\\S+$).{5,15}$")
 	private String password;
 	
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
