@@ -2,6 +2,8 @@ package com.plantparadisemarket.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -55,6 +57,28 @@ public class CustomerServiceImpl implements CustomerService{
 		if(customerId==null || customerId==0)throw new CustomerException("Invalid CustomerId");
 		Customer cust=customerRepo.findById(customerId).orElseThrow(()-> new CustomerException("Customer with CustomerId "+customerId+" does not exist"));
 		return cust;
+	}
+	
+	@Override
+	public Customer viewCustomerByEmail(String email) {
+		if(email==null)throw new CustomerException("Email cannot be null");
+		Customer cust=customerRepo.findByCustomerEmail(email).orElseThrow(()-> new CustomerException("Customer with email "+email+" does not exist"));
+		return cust;
+	}
+	
+	@Override
+	public Customer viewCustomerByPhoneNo(String phoneNo) {
+		
+		if(phoneNo==null)throw new CustomerException("Phone Number Cannot be null");
+		Pattern p=Pattern.compile("^[6-9]\\d{9}$");
+		Matcher m=p.matcher(phoneNo);
+		if(!m.matches()) {
+		   throw new CustomerException("Invalid Phone Number");
+		}
+		
+		Customer cust=customerRepo.findByPhoneNo(phoneNo).orElseThrow(()-> new CustomerException("Customer with Phone Number "+phoneNo+" does not exist"));
+		return cust;
+		
 	}
 
 	@Override

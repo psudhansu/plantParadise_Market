@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.plantparadisemarket.model.Customer;
@@ -55,6 +56,24 @@ public class CustomerController {
 	public ResponseEntity<List<Customer>> getAllCustomersHandler(){
 		
 		return new ResponseEntity<>(customerService.viewAllCustomer(),HttpStatus.OK);
+	}
+	
+	@GetMapping("/customer")
+	public ResponseEntity<Customer> getCustomerByEmailHandler(@RequestParam("email") String email){
+		
+		return new ResponseEntity<>(customerService.viewCustomerByEmail(email),HttpStatus.OK);
+	}
+	
+	@GetMapping("/customerByNumber/{number}")
+	public ResponseEntity<Customer> getCustomerByPhoneNoHandler(@PathVariable String number){
+		
+		return new ResponseEntity<>(customerService.viewCustomerByPhoneNo(number),HttpStatus.OK);
+	}
+	
+	@GetMapping("/validate")
+	public ResponseEntity<Boolean> validateCustomerHandler(@RequestParam("username") String username,@RequestParam("password") String password){
+		System.out.println("hello here");
+		return new ResponseEntity<>(customerService.validateCustomer(username, password),HttpStatus.OK);
 	}
 	
 }
