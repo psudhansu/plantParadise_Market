@@ -42,9 +42,8 @@ public class Customer {
 	@Size(min = 2)
 	private String customerName;
 	
-	@Email
+	@Email(regexp = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",message = "Invalid Email Id")
 	@Column(unique = true)
-//	@NotNull
 	private String customerEmail;
 	
 	
@@ -52,14 +51,14 @@ public class Customer {
 	@NotNull
 	@NotEmpty
 	@Column(unique = true)
-	@Pattern(regexp = "^[6-9]\\d{9}$")
+	@Pattern(regexp = "^[6-9]\\d{9}$",message = "Invalid Phone Number")
 	private String phoneNo;
 	
 	
 	@NotBlank
 	@NotNull
 	@NotEmpty
-	@Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\\\S+$).{5,}$")
+	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=])[a-zA-Z\\d@#$%^&+=]{8,}$",message = "Invalid Password, your password should contain atleast one number, one special character, one capital letter and rest can be small letters")
 	private String password;
 	
 	

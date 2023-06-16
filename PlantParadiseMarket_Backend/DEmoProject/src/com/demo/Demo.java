@@ -7,8 +7,8 @@ public class Demo {
 
 	public static void main(String[] args) {
 		
-		Pattern p=Pattern.compile("^[6-9]\\d{9}$");
-		Matcher m=p.matcher("6566778890");
+		Pattern p=Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=])[a-zA-Z\\d@#$%^&+=]{6,15}$");
+		Matcher m=p.matcher("Abhi@12");
 		
 		System.out.println(m.matches());
 		

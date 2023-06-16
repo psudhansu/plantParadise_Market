@@ -1,11 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <title>Home</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Courier Prime", monospace;
+  background-color: #fefdfd;
+}
+header {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+header h1 {
+  font-size: 60px;
+  font-weight: 500;
+  text-align: center;
+  color: #123ecf;
+  border-right: 3px solid #000;
+  animation: cursor 1s infinite step-end, typing 15s infinite steps(20);
+  white-space: nowrap;
+  overflow: hidden;
+}
+@keyframes cursor{
+  0%, 100%{border-color: transparent;}
+  100%{border-color: #000000;}
+}
+
+@keyframes typing{
+  0%{ width: 0ch} 
+  30%{ width: 23ch;}
+  80%{ width: 23ch;} 
+  90%{ width: 0ch;} 
+  100%{ width: 23ch;}
+}
+
+#plantparadise{
+  transform-style: preserve-3d;
+
+}
+
+  </style>
 </head>
+
 <body>
-    <h1>Hello World</h1>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">SignIn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">SignUp</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="plantparadise">
+    <header>
+        <h1>PPM Welcomes You !</h1>
+    </header>
+</div>
+
+
+<div class="container-md">
+<div class="row justify-content-center align-items-center g-2">
+ <div class="p-5 col">
+   <div class="card text-center">
+     <div class="card-header">Let's Start the Journey</div>
+     <div class="card-body">
+       <a class="btn btn-primary btn-lg " href="./login.html" role="button">Login</a>
+       <a class="btn btn-primary btn-lg " href="./register.html" role="button">SignUp</a>
+     </div>
+     <div class="card-footer text-body-secondary">
+       for any kind of help click here
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>
