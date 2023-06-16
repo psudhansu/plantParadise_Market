@@ -69,7 +69,7 @@ public class PlantServiceImpl implements PlantService{
 		
 		Optional<Plant> newPlan= plantRepository.findById(plantId);
 		
-		if(!newPlan.isPresent()) throw new PlantException("This Plant is Not Existed !");
+		if(!newPlan.isPresent()) throw new PlantException("This Plant does not existed !");
 		
 		Plant plant1= newPlan.get();
 		
