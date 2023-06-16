@@ -56,7 +56,7 @@ public class Planter {
 	@NotNull
 	private Integer planterCost;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Orders orders;
 	

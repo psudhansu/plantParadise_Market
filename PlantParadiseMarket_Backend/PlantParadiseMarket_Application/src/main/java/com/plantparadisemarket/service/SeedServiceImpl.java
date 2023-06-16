@@ -65,9 +65,9 @@ public class SeedServiceImpl implements SeedService {
 	@Override
 	public List<Seed> viewAllseed() throws SeedException {
 		Pageable p = PageRequest.of(0, 5, Sort.by("commonName").ascending()) ;
-		List<Seed> customersList = sRepo.findAll(p).getContent() ;
-    	if(customersList.isEmpty()) throw new SeedException("Empty Seed list") ;
-    	return customersList ;
+		List<Seed> seedList = sRepo.findAll(p).getContent() ;
+    	if(seedList.isEmpty()) throw new SeedException("Empty Seed list") ;
+    	return seedList ;
 	}
 
 	@Override

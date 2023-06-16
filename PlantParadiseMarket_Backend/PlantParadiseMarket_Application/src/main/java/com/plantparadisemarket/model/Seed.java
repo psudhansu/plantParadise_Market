@@ -10,6 +10,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -27,7 +28,6 @@ public class Seed {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonProperty(access = Access.READ_ONLY)
 	private Integer seedId;
 	
 	@NotNull
@@ -69,5 +69,9 @@ public class Seed {
 	
 	@OneToOne(fetch = FetchType.EAGER)
 	private Planter planter;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Orders orders;
 	
 }
