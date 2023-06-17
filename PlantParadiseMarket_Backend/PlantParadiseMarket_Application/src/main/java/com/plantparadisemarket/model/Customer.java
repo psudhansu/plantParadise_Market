@@ -46,19 +46,13 @@ public class Customer extends Users{
 	@Size(min = 2)
 	private String customerName;
 	
-	@Email
-	@Column(unique = true)
-//	@NotNull
-	private String customerEmail;
-	
 	
 	@NotBlank
 	@NotNull
 	@NotEmpty
 	@Column(unique = true)
-	@Pattern(regexp = "^[6-9]\\d{9}$")
+	@Pattern(regexp = "^[6-9]\\d{9}$",message = "Invalid Phone Number")
 	private String phoneNo;
-	
 	
 	
 	@Embedded
