@@ -42,9 +42,9 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public Admin viewAdminByUserName(String userName) {
-		if(userName==null)throw new AdminException("Invalid Username");
-		Admin resAdmin=adminRepo.findByUsername(userName).orElseThrow(()-> new AdminException("Admin with Username "+userName+" does not exist"));
+	public Admin viewAdminByUserName(String username) {
+		if(username==null)throw new AdminException("Invalid Username");
+		Admin resAdmin=adminRepo.findByUsername(username).orElseThrow(()-> new AdminException("Admin with Username "+username+" does not exist"));
 		return resAdmin;
 	}
 
