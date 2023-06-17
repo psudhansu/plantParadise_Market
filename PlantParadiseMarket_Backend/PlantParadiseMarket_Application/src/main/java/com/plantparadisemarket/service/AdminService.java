@@ -10,6 +10,9 @@ public interface AdminService {
 	public Admin deleteAdmin(Integer adminId);
 	public Admin updateAdminPassword(String password);
 	public Admin viewAdminByUserName(String userName);
+	
+	public Admin getAdminById(Integer adminId);
+	
 	public List<Admin> viewAllAdmin();
 	
 }

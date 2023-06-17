@@ -28,8 +28,8 @@ public class Plant {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	private Integer plantId;
+	@JsonProperty(access = Access.READ_ONLY)
+	private int plantId;
 
 	@NotNull
 	private Integer plantHeight;
