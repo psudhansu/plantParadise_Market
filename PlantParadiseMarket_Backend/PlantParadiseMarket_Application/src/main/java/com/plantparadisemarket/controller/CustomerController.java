@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,10 +31,14 @@ public class CustomerController {
 	@Autowired
 	private CustomerServiceImpl customerService;
 	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
-	@PostMapping("/registerCustomer")
+	
+	@PostMapping("/registerCustomers")
 	public ResponseEntity<Customer> registerCustomerHandler(@Valid @RequestBody Customer customer){
-		
+		customer.setPassword(passwordEncoder.encode(customer.getPassword()));
+    	customer.setRole("ROLE_USER");
 		return new ResponseEntity<>(customerService.addCustomer(customer),HttpStatus.CREATED);
 	}
 	
@@ -77,5 +83,12 @@ public class CustomerController {
 //		System.out.println("hello here");
 //		return new ResponseEntity<>(customerService.validateCustomer(username, password),HttpStatus.OK);
 //	}
+	
+	 @GetMapping("/CustomerSignIn")
+	    public ResponseEntity<String> getLoggedInCustomerDetailsHandler(Authentication auth){
+	    System.out.println(auth); // this Authentication object having Principle object details
+	    Customer customer= customerService.viewCustomerByUsername(auth.getName());
+	    return new ResponseEntity<>(customer.getCustomerName()+" Logged In Successfully", HttpStatus.ACCEPTED);
+	    }
 	
 }

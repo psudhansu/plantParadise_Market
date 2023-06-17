@@ -61,7 +61,7 @@ public class CustomerServiceImpl implements CustomerService{
 	
 	@Override
 	public Customer viewCustomerByUsername(String username) {
-		if(username==null)throw new CustomerException("Email cannot be null");
+		if(username==null)throw new CustomerException("Username cannot be null");
 		Customer cust=customerRepo.findByUsername(username).orElseThrow(()-> new CustomerException("Customer with email "+username+" does not exist"));
 		return cust;
 	}

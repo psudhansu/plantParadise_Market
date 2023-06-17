@@ -41,8 +41,4 @@ public class Admin extends Users{
 	private String AdminName;
 	
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	private Set<Customer> customers= new HashSet<>();
-	
-	
 }

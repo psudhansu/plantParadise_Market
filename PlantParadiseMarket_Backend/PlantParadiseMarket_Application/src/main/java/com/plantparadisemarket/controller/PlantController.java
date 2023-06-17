@@ -76,7 +76,7 @@ public class PlantController {
 		return new ResponseEntity<>(plantNew, HttpStatus.ACCEPTED);
 	}
 	
-	@GetMapping("/plantViewAll{typeOfPlant}")
+	@GetMapping("/plants")
 	public ResponseEntity<List<Plant>> viewAllPlantHandller() {
 		
 		List<Plant> plantNew = plantService.viewPlants();
