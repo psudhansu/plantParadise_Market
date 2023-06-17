@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.plantparadisemarket.model.Plant;
 
 @Repository
-public interface PlantRepository extends JpaRepository<Plant, Integer>,PagingAndSortingRepository<Customer, Integer>{
+public interface PlantRepository extends JpaRepository<Plant, Integer>,PagingAndSortingRepository<Plant, Integer>{
 	
 	public List<Plant> findByCommonName(String commonName);
 

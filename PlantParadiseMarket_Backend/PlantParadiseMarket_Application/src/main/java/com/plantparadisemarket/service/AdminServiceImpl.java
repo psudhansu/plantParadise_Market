@@ -10,7 +10,6 @@ import com.plantparadisemarket.exception.AdminException;
 import com.plantparadisemarket.model.Admin;
 import com.plantparadisemarket.repository.AdminRepository;
 
-import io.swagger.v3.oas.annotations.servers.Server;
 
 @Service
 public class AdminServiceImpl implements AdminService{

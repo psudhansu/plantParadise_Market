@@ -40,10 +40,6 @@ public class Admin extends Users{
 	@NotNull
 	private String AdminName;
 	
-	@Email
-	@Column(unique = true)
-//	@NotNull
-	private String AdminEmail;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Customer> customers= new HashSet<>();

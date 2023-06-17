@@ -20,10 +20,10 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public Customer addCustomer(Customer customer) {
-		if(customer==null || customer.getCustomerEmail()==null)throw new CustomerException("Customer Cannot be null.");
-		Optional<Customer> cust=customerRepo.findByCustomerEmail(customer.getCustomerEmail());
+		if(customer==null || customer.getUsername()==null)throw new CustomerException("Customer Cannot be null.");
+		Optional<Customer> cust=customerRepo.findByUsername(customer.getUsername());
 		if(cust.isPresent()) {
-			throw new CustomerException("Customer with this email "+customer.getCustomerEmail()+" already exist.");
+			throw new CustomerException("Customer with this Username "+customer.getUsername()+" already exist.");
 		}
 		return customerRepo.save(customer);
 	}
@@ -31,10 +31,10 @@ public class CustomerServiceImpl implements CustomerService{
 	@Override
 	public Customer updateCustomer(Customer customer) {
 		System.out.println(customer);
-		if(customer==null || customer.getCustomerEmail()==null)throw new CustomerException("Customer Cannot be null.");
-		Optional<Customer> cust=customerRepo.findByCustomerEmail(customer.getCustomerEmail());
+		if(customer==null || customer.getUsername()==null)throw new CustomerException("Customer Cannot be null.");
+		Optional<Customer> cust=customerRepo.findByUsername(customer.getUsername());
 		if(cust.isEmpty()) {
-			throw new CustomerException("Customer with email "+customer.getCustomerEmail()+" does not exist.");
+			throw new CustomerException("Customer with Username "+customer.getUsername()+" does not exist.");
 		}
 		Customer res=cust.get();
 		res.setAddress(customer.getAddress());
@@ -60,9 +60,9 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 	
 	@Override
-	public Customer viewCustomerByEmail(String email) {
-		if(email==null)throw new CustomerException("Email cannot be null");
-		Customer cust=customerRepo.findByCustomerEmail(email).orElseThrow(()-> new CustomerException("Customer with email "+email+" does not exist"));
+	public Customer viewCustomerByUsername(String username) {
+		if(username==null)throw new CustomerException("Email cannot be null");
+		Customer cust=customerRepo.findByUsername(username).orElseThrow(()-> new CustomerException("Customer with email "+username+" does not exist"));
 		return cust;
 	}
 	
@@ -86,11 +86,11 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerRepo.findAll();
 	}
 
-	@Override
-	public boolean validateCustomer(String userName, String password) {
-		Optional<Customer> res=customerRepo.findByCustomerEmailAndPassword(userName, password);
-		return res.isPresent();
-	}
+//	@Override
+//	public boolean validateCustomer(String userName, String password) {
+//		Optional<Customer> res=customerRepo.findByCustomerEmailAndPassword(userName, password);
+//		return res.isPresent();
+//	}
 	
 	
 	

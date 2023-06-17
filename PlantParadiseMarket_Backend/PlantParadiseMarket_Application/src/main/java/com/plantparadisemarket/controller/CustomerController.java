@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/ppm")
+@CrossOrigin("*")
 public class CustomerController {
 
 	@Autowired
@@ -59,9 +61,9 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/customer")
-	public ResponseEntity<Customer> getCustomerByEmailHandler(@RequestParam("email") String email){
+	public ResponseEntity<Customer> getCustomerByEmailHandler(@RequestParam("username") String username){
 		
-		return new ResponseEntity<>(customerService.viewCustomerByEmail(email),HttpStatus.OK);
+		return new ResponseEntity<>(customerService.viewCustomerByUsername(username),HttpStatus.OK);
 	}
 	
 	@GetMapping("/customerByNumber/{number}")
@@ -70,10 +72,10 @@ public class CustomerController {
 		return new ResponseEntity<>(customerService.viewCustomerByPhoneNo(number),HttpStatus.OK);
 	}
 	
-	@GetMapping("/validate")
-	public ResponseEntity<Boolean> validateCustomerHandler(@RequestParam("username") String username,@RequestParam("password") String password){
-		System.out.println("hello here");
-		return new ResponseEntity<>(customerService.validateCustomer(username, password),HttpStatus.OK);
-	}
+//	@GetMapping("/validate")
+//	public ResponseEntity<Boolean> validateCustomerHandler(@RequestParam("username") String username,@RequestParam("password") String password){
+//		System.out.println("hello here");
+//		return new ResponseEntity<>(customerService.validateCustomer(username, password),HttpStatus.OK);
+//	}
 	
 }

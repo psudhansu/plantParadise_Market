@@ -57,7 +57,7 @@ public class Seed {
 	@NotNull
 	@NotBlank
 	@NotEmpty
-	@Size(min = 10)
+	@Size(min = 5)
 	private String seedsDescription;
 	
 	
