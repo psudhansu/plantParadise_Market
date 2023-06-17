@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Dashboard</h1>
+
+    <!-- Get Admin Details by ID -->
+    <form>
+      <div class="mb-3">
+        <label for="adminId">Admin ID</label>
+        <input type="text" class="form-control" id="adminId" placeholder="Enter Admin ID">
+      </div>
+      <button type="submit" id="getAdmin" class="btn btn-primary">Get Admin Details</button>
+      <button type="submit" id="getAll" class="btn btn-primary">Get All Admins</button>
+
+
+    </form>
+
+    <!-- Get All Admins -->
+    <div class="mt-5">
+      <h2>All Admins</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+            <!-- <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>john@example.com</td>
+              </tr> -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Delete Admin -->
+    <div class="mt-5">
+      <h2>Delete Admin</h2>
+      <form>
+        <div class="mb-3">
+          <label for="deleteAdminId">Admin ID</label>
+          <input type="text" class="form-control" id="deleteAdminId" placeholder="Enter Admin ID">
+        </div>
+        <button type="submit" id="delete" class="btn btn-danger">Delete Admin</button>
+      </form>
+    </div>
+
+    <!-- Add Plants ------------------------------------------------------------------>
+    <div class="mt-5">
+      <h2>Add Plants</h2>
+      <form>
+        <div class="mb-3">
+            <label for="plantHeight">Plant Height</label>
+            <input type="number" class="form-control" id="plantHeight" placeholder="Enter Plant Height">
+          </div>
+        <div class="mb-3">
+            <label for="commonName">Common Name</label>
+            <input type="text" class="form-control" id="commonName" placeholder="Enter Plant Common Name">
+          </div>
+
+        <div class="mb-3">
+            <label for="bloomTime">bloom Time</label>
+            <input type="text" class="form-control" id="bloomTime" placeholder="Enter Plant bloomTime">
+          </div>
+
+        <div class="mb-3">
+            <label for="medicinalOrCulinaryUse">medicinal Or Culinary Use</label>
+            <input type="text" class="form-control" id="medicinalOrCulinaryUse" placeholder="medicinal Or Culinary Use">
+          </div>
+
+        <div class="mb-3">
+            <label for="temperature">Temperature</label>
+            <input type="text" class="form-control" id="temperature" placeholder="Enter Temperature">
+          </div>
+
+        <div class="mb-3">
+          <label for="typeOfPlant">Plant Type</label>
+          <input type="text" class="form-control" id="typeOfPlant" placeholder="Enter Plant Type">
+        </div>
+
+        <div class="mb-3">
+          <label for="plantDescription">Plant Description</label>
+          <textarea class="form-control" id="plantDescription" placeholder="Enter Plant Description"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="plantCost">Plant Cost</label>
+            <input type="number" class="form-control" id="plantCost" placeholder="Enter Plant Cost">
+          </div>
+
+        
+        <button type="submit" id="plantSubmit" class="btn btn-primary">Add Plant</button>
+      </form>
+    </div>
+
+    <!-- Add Planters -->
+    <div class="mt-5">
+      <h2>Add Planters</h2>
+      <form>
+        <div class="mb-3">
+            <label for="planterHeight">Planter Height</label>
+            <input type="number" class="form-control" id="planterHeight" placeholder="Enter Planter Height">
+          </div>
+
+          <div class="mb-3">
+            <label for="planterCapacity">Planter Capacity</label>
+            <input type="number" class="form-control" id="planterCapacity" placeholder="Enter Planter Capacity">
+          </div>
+
+          <div class="mb-3">
+            <label for="drinageHole">Planter drinageHole</label>
+            <input type="number" class="form-control" id="drinageHole" placeholder="Enter Planter drinageHole">
+          </div>
+
+          <div class="mb-3">
+            <label for="planterColor">Planter Color</label>
+            <input type="text" class="form-control" id="planterColor" placeholder="Enter Planter Color">
+          </div>
+
+          <div class="mb-3">
+            <label for="planterShape">Planter Shape</label>
+            <input type="text" class="form-control" id="planterShape" placeholder="Enter Planter Shape">
+          </div>
+        
+        <div class="mb-3">
+          <label for="planterStock">Planter Stock</label>
+          <input type="number" class="form-control" id="planterStock" placeholder="Enter Planter Stock">
+        </div>
+
+        <div class="mb-3">
+            <label for="planterCost">Planter Cost</label>
+            <input type="number" class="form-control" id="planterCost" placeholder="Enter Planter Cost">
+          </div>
+
+        <button type="submit" class="btn btn-primary">Add Planter</button>
+      </form>
+    </div>
+
+    <!-- Add Seed -->
+    <div class="mt-5">
+      <h2>Add Seed</h2>
+      <form>
+
+        <div class="mb-3">
+            <label for="commonName">Common Name</label>
+            <input type="text" class="form-control" id="commonNameSeed" placeholder="Enter Seed Common Name">
+          </div>
+
+          <div class="mb-3">
+            <label for="bloomTime">bloom Time</label>
+            <input type="text" class="form-control" id="bloomTimeSeed" placeholder="Enter Seed bloomTime">
+          </div>
+
+          <div class="mb-3">
+            <label for="watering">watering</label>
+            <input type="text" class="form-control" id="watering" placeholder="Enter Seed watering">
+          </div>
+
+          <div class="mb-3">
+            <label for="typeOfSeeds">type Of Seeds</label>
+            <input type="text" class="form-control" id="typeOfSeeds" placeholder="Enter typeOfSeeds">
+          </div>
+
+        <div class="mb-3">
+          <label for="seedDescription">Seed Description</label>
+          <textarea class="form-control" id="seedDescription" placeholder="Enter Seed Description"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="seedsCost">seeds Cost</label>
+            <input type="number" class="form-control" id="seedsCost" placeholder="Enter seedsCost">
+          </div>
+
+        <button type="submit" class="btn btn-primary">Add Seed</button>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<script src="./Scripts/admin.js" ></script>

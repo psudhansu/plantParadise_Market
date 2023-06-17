@@ -40,7 +40,7 @@ public class AdminController {
 		return new ResponseEntity<>(adminService.registerAdmin(admin),HttpStatus.CREATED);
 	}
 	
-	@DeleteMapping("/deleteAdmin")
+	@DeleteMapping("/deleteAdmin/{adminId}")
 	public ResponseEntity<Admin> deleteAdminHandler(@PathVariable Integer adminId){
 		
 		return new ResponseEntity<>(adminService.deleteAdmin(adminId),HttpStatus.GONE);
@@ -57,11 +57,12 @@ public class AdminController {
 		
 		return new ResponseEntity<>(adminService.viewAllAdmin(),HttpStatus.OK);
 	}
+
 	@GetMapping("/AdminSignIn")
     public ResponseEntity<String> getLoggedInCustomerDetailsHandler(Authentication auth){
     System.out.println(auth); // this Authentication object having Principle object details
     Admin admin= adminService.viewAdminByUserName(auth.getName());
     return new ResponseEntity<>(admin.getAdminName()+" Logged In Successfully", HttpStatus.ACCEPTED);
     }
-	
+
 }

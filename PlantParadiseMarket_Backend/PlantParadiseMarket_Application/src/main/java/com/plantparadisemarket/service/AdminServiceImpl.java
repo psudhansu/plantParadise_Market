@@ -57,4 +57,13 @@ public class AdminServiceImpl implements AdminService{
 		return resList;
 	}
 
+	@Override
+	public Admin getAdminById(Integer adminId) {
+		if(adminId==null || adminId==0)throw new AdminException("Invalid adminId");
+		Admin resAdmin=adminRepo.findById(adminId).orElseThrow(()->new AdminException("Admin with Id "+adminId+" does not exist"));
+		
+		return resAdmin;
+		
+	}
+
 }
