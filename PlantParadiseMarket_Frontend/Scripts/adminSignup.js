@@ -10,15 +10,21 @@ function postReq() {
 
   let username = document.getElementById("email").value;
   let password = document.getElementById("password").value;
+  let role = document.getElementById("role").value;
+  let adminName= document.getElementById("name").value;
 
-  fetch("http://localhost:8899/ppm/registerAdmin", {
+  // console.log(username,password,role,adminName);
+
+  fetch("http://localhost:8080/ppm/registerAdmin", {
     method: "POST",
     headers: {
       "content-Type": "application/json",
     },
     body: JSON.stringify({
       username,
-      password
+      password,
+      role,
+      adminName
     }),
   }).then((response) => {
     console.log(response);
