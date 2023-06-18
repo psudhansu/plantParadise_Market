@@ -12,6 +12,7 @@ The application also includes user and admin validation and authentication.
 ![ERDiagram](https://github.com/hemant097/berserk-camera-3158/blob/main/ER%20diagram.png?raw=true)
 
 
+
 ## ![TECH_STACK](https://img.shields.io/badge/Tech_Stack-%231572B6.svg?style=for-the-badge)
 
 - JAVA
