@@ -9,7 +9,7 @@ The application also includes user and admin validation and authentication.
 
 ## ![ER_Diagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=sharing)
 ![ERDiagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=drive_link)
-
+![er_diagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=drive_link)
 
 
 ## ![TECH_STACK](https://img.shields.io/badge/Tech_Stack-%231572B6.svg?style=for-the-badge)
