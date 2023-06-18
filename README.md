@@ -6,10 +6,8 @@
 
 REST API for an Online Plant Nursery Platform that allows customers to view the list of plants, seeds, and planters. 
 The application also includes user and admin validation and authentication.
-
-## ![ER_Diagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=drive_link)
-![ERDiagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=drive_link)
-![er_diagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=drive_link)
+## Er Diagram
+![ErDiagram](https://github.com/psudhansu/dangerous-powder-9842/assets/119405182/624df877-b898-4984-9f61-6198af93c0a8)
 
 
 ## ![TECH_STACK](https://img.shields.io/badge/Tech_Stack-%231572B6.svg?style=for-the-badge)
