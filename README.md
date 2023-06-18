@@ -6,7 +6,7 @@
 
 REST API for an Online Nursery Management System that allows customers to view and buy the list of plants, seeds, and planters. 
 The application also includes user and admin validation and authentication.
-## Er Diagram
+## ER Diagram
 ![ErDiagram](https://github.com/psudhansu/dangerous-powder-9842/assets/119405182/624df877-b898-4984-9f61-6198af93c0a8)
 
 
