@@ -65,7 +65,7 @@ Create a New Database in SQL: "Nursery"
 Go to the Project Directory
 
 ```bas
-Open the Plantparadise Folder with S.T.S
+Open the PlantParadiseMarketApplication Folder with S.T.S
 ```
 
 Go to **src/main/resources > application.properties** & change your username and password (MySQL server username & password)
@@ -78,17 +78,17 @@ spring.datasource.password="password"
 To change the **Server Port**
 
 ```bash
-server.port=8888
+server.port=8080
 ```
 
-Go to **com.masai package > PlantAndPlantersApplication.java**
+Go to **com.plantparadisemarket package > PlantParadiseMarketApplication.java**
 
 ```bash
 Run as Spring Boot App
 ```
 Open the following URL for Swagger-UI 
 ```bash
-http://localhost:8888/swagger-ui/
+http://localhost:8080/swagger-ui/
 ```
 
 ## ![TECH_STACK](https://img.shields.io/badge/Acknowledgement-%231572B6.svg?style=for-the-badge)
