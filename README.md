@@ -7,7 +7,7 @@
 REST API for an Online Plant Nursery Platform that allows customers to view the list of plants, seeds, and planters. 
 The application also includes user and admin validation and authentication.
 
-## ![ER_Diagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=sharing)
+## ![ER_Diagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=drive_link)
 ![ERDiagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=drive_link)
 ![er_diagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=drive_link)
 
