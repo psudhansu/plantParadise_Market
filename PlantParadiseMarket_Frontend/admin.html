@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
   <title>Admin Dashboard</title>
+  <style>
+    .container h1{
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+  <br><br>
   <div class="container">
     <h1>Admin Dashboard</h1>
+    <br>
 
     <!-- Get Admin Details by ID -->
     <form>
@@ -103,6 +110,43 @@
       </form>
     </div>
 
+
+    <!-- View Plants -->
+    <div class="mt-5">
+      <h2>View Plants By ID</h2>
+      <form>
+        <div class="mb-3">
+          <label for="viewAdminId">Plant ID</label>
+          <input type="text" class="form-control" id="viewAdminId" placeholder="Enter Plant ID">
+        </div>
+        <button type="submit" id="ViewPlant" class="btn btn-primary">View Plant</button>
+        <button type="submit" id="ViewAllPlant" class="btn btn-primary">View All Plants</button>
+      </form>
+    </div>
+
+    <div class="mt-5">
+      <h2>All Plants</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>PlantID</th>
+            <th>Plant Height</th>
+            <th>Common Name</th>
+            <th>BloomTime</th>
+            <th>Use of Plant</th>
+            <th>Temperature Required</th>
+            <th>Plant Type</th>
+            <th>Plant Description</th>
+            <th>Plant Cost</th>
+          </tr>
+        </thead>
+        <tbody id="pr">
+            
+        </tbody>
+      </table>
+    </div>
+
+
     <!-- Add Planters -->
     <div class="mt-5">
       <h2>Add Planters</h2>
@@ -141,8 +185,9 @@
             <label for="planterCost">Planter Cost</label>
             <input type="number" class="form-control" id="planterCost" placeholder="Enter Planter Cost">
           </div>
+          
 
-        <button type="submit" class="btn btn-primary">Add Planter</button>
+        <button type="submit" id="planterSubmit" class="btn btn-primary">Add Planter</button>
       </form>
     </div>
 
@@ -153,39 +198,46 @@
 
         <div class="mb-3">
             <label for="commonName">Common Name</label>
-            <input type="text" class="form-control" id="commonNameSeed" placeholder="Enter Seed Common Name">
+            <input type="text" class="form-control" id="commonName" placeholder="Enter Seed Common Name">
           </div>
 
           <div class="mb-3">
-            <label for="bloomTime">bloom Time</label>
-            <input type="text" class="form-control" id="bloomTimeSeed" placeholder="Enter Seed bloomTime">
+            <label for="bloomTime">Bloom Time</label>
+            <input type="text" class="form-control" id="bloomTime" placeholder="Enter Seed bloomTime">
           </div>
 
           <div class="mb-3">
-            <label for="watering">watering</label>
+            <label for="watering">Watering</label>
             <input type="text" class="form-control" id="watering" placeholder="Enter Seed watering">
           </div>
 
           <div class="mb-3">
-            <label for="typeOfSeeds">type Of Seeds</label>
+            <label for="typeOfSeeds">Type Of Seeds</label>
             <input type="text" class="form-control" id="typeOfSeeds" placeholder="Enter typeOfSeeds">
           </div>
 
         <div class="mb-3">
-          <label for="seedDescription">Seed Description</label>
-          <textarea class="form-control" id="seedDescription" placeholder="Enter Seed Description"></textarea>
+          <label for="seedsDescription">Seed Description</label>
+          <textarea class="form-control" id="seedsDescription" placeholder="Enter Seed Description"></textarea>
         </div>
 
         <div class="mb-3">
-            <label for="seedsCost">seeds Cost</label>
+            <label for="seedsCost">Seeds Cost</label>
             <input type="number" class="form-control" id="seedsCost" placeholder="Enter seedsCost">
-          </div>
+        </div>
 
-        <button type="submit" class="btn btn-primary">Add Seed</button>
+        <div class="mb-3">
+          <label for="seedsPerPacket">Seeds Per Packet</label>
+          <input type="number" class="form-control" id="seedsPerPacket" placeholder="Enter seeds per packet">
+      </div>
+
+        <button type="submit" id="seedSubmit" class="btn btn-primary">Add Seed</button>
       </form>
     </div>
 
   </div>
+  <br>
+  <br>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js"></script>
 </body>

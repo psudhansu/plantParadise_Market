@@ -67,6 +67,8 @@ public class Planter {
 	@OneToOne(mappedBy = "planter",cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Seed seed;
+	
+	
 
 	public int getPlanterId() {
 		return planterId;
