@@ -8,7 +8,7 @@ REST API for an Online Plant Nursery Platform that allows customers to view the 
 The application also includes user and admin validation and authentication.
 
 ## ![ER_Diagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=sharing)
-![ERDiagram](https://github.com/hemant097/berserk-camera-3158/blob/main/ER%20diagram.png?raw=true)
+![ERDiagram](https://drive.google.com/file/d/1QB3xy7OPaRaGrIi29smffyF07slR4L7t/view?usp=sharing)
 
 
 
