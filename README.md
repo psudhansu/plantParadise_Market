@@ -52,7 +52,7 @@ https://dev.mysql.com/downloads/mysql/
 Clone the Repository
 
 ```bash
-git clone https://github.com/psudhansu/dangerous-powder-9842
+git clone https://github.com/psudhansu/dangerous-powder-9842.git
 ```
 
 Open MySQL Server
