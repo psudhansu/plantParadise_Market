@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Customer Page</title>
+    <style>
+        .container h1{
+            text-align: center;
+        }
+        #buttons{
+            margin: auto;
+            margin-top: 50px;
+            display: flex;
+            width: 50%;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 60px;
+        }
+        #buttons button{
+            margin: auto;
+            width: 100%;
+            height: 60px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="logout">LogOut</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <br><br><br>
+      <div class="container">
+        <h1>Customer Dashboard</h1>
+        <br>
+    
+        <!-- Get Admin Details by ID -->
+        
+        <div id="buttons">
+            <button type="submit" class="btn btn-primary" id="plants">Buy Plants</button>
+            <button type="submit" class="btn btn-primary" id="seeds">Buy Seeds</button>
+            <button type="submit" class="btn btn-primary" id="planters">Buy Planters</button>
+        </div>
+      </div>  
+</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</html>
+<script>
+
+    let plantBtn=document.getElementById("plants");
+    plantBtn.addEventListener("click",function(event){
+      window.location.href="plants.html";
+    })
+
+    let seedBtn=document.getElementById("seeds");
+    seedBtn.addEventListener("click",function(event){
+      console.log("Hiii")
+      window.location.href="seeds.html";
+    })
+
+    let planterBtn=document.getElementById("planters");
+    planterBtn.addEventListener("click",function(event){
+      window.location.href="planters.html";
+    })
+
+</script>
+<script src="./Scripts/logout.js"></script>

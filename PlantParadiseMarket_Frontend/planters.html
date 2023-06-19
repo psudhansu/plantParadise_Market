@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="logout">LogOut</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <br><br><br>
+
+      <div class="container">
+        <h1>Planter Section</h1>
+        <br>
+    
+        <!-- Plant Data Rows -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Planter Height</th>
+              <th>Planter Color</th>
+              <th>Planter Shape</th>
+              <th>Planter Capacity</th>
+              <th>Planter Cost</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="planterRow">
+            <!-- <tr>
+              <td>Planter 2</td>
+              <td>10 inches</td>
+              <td>Blue</td>
+              <td>Square</td>
+              <td>$20</td>
+              <td><button class="btn btn-primary">Add to Cart</button></td>
+            </tr> -->
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+    
+      </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</html>
+<script src="./Scripts/planter.js"></script>
+<script src="./Scripts/logout.js"></script>
