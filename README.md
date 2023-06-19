@@ -96,6 +96,11 @@ Open the following URL for Swagger-UI
 ```bash
 http://localhost:8080/swagger-ui/
 ```
+##Contributors
+- Sudhanshu Nayak(Team Lead)
+- Suryakant Singh
+- Prathamesh Chavan
+- Shweta Guranagoudar
 
 ## ![TECH_STACK](https://img.shields.io/badge/Acknowledgement-%231572B6.svg?style=for-the-badge)
 
