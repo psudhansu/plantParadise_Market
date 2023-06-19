@@ -1,8 +1,6 @@
-# Nursery Management System
+<h1 align="center">Nursery Management System</h1>
 
-<p align="center">
-  Plant Paradise System
-</p> 
+<h2 align="center">Plant Paradise System</h2>
 
 REST API for an Online Nursery Management System that allows customers to view and buy the list of plants, seeds, and planters. 
 The application also includes user and admin validation and authentication.
