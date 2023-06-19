@@ -5,8 +5,9 @@
 </h2> 
 
 <p align="center">
-  <img src="https://github.com/psudhansu/dangerous-powder-9842/assets/111189783/a29e50f8-0966-4c84-81d1-f2112ea7a365)" alt="Description of the image" style="display: block; margin: 0 auto;">
+  <img src="https://github.com/psudhansu/dangerous-powder-9842/assets/111189783/3d7e7049-9436-40e0-b7e7-000cda5f5594)" alt="Description of the image" style="display: block; margin: 0 auto;">
 </p>
+
 
 
 REST API for an Online Nursery Management System that allows customers to view and buy the list of plants, seeds, and planters. 
