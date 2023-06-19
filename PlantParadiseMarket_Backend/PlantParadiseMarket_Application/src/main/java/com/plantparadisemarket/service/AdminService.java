@@ -12,5 +12,6 @@ public interface AdminService {
 	public Admin viewAdminByUserName(String username);
 
 	public List<Admin> viewAllAdmin();
+	public Admin getAdminById(Integer adminId);
 	
 }

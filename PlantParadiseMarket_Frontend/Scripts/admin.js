@@ -40,7 +40,7 @@ function getReq(){
     // });
 
 
-    fetch(`http://localhost:8080/ppm/getAdminById/${adminId}`)
+    fetch(`http://localhost:8080/aam/getAdminById/${adminId}`)
     .then((response) => response.json())
     .then((response) => {
 
@@ -85,7 +85,7 @@ function displayData(data){
 
 
 function getAllAdmin(){
-    fetch(`http://localhost:8080/ppm/getAdmins`)
+    fetch(`http://localhost:8080/aam/getAdmins`)
     .then((response) => response.json())
     .then((response) => {
 
@@ -428,7 +428,8 @@ viewPlants.addEventListener("click",function(event){
 
 function getPlants(){
 
-    fetch(`http://localhost:8080/ppm/plantViewAll`)
+    fetch(`http://localhost:8080/ppm/plants
+    `)
         .then((response) => response.json())
         .then((response) => {
 

@@ -6,17 +6,25 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.plantparadisemarket.exception.CustomerException;
 import com.plantparadisemarket.model.Customer;
 import com.plantparadisemarket.repository.CustomerRepository;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
 @Service
 public class CustomerServiceImpl implements CustomerService{
 
 	@Autowired
 	private CustomerRepository customerRepo;
+	
+	@Autowired
+	private HttpServletRequest request;
 
 	@Override
 	public Customer addCustomer(Customer customer) {
@@ -92,6 +100,14 @@ public class CustomerServiceImpl implements CustomerService{
 //		return res.isPresent();
 //	}
 	
-	
+	public String authenticate() {
+	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    HttpSession session = request.getSession();
+	    String sessionId = session.getId();
+
+	    // Perform further actions or store the session ID as needed
+
+	    return sessionId;
+	  }
 	
 }

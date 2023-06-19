@@ -3,6 +3,7 @@ package com.plantparadisemarket.model;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
@@ -22,18 +23,23 @@ import lombok.NoArgsConstructor;
 @MappedSuperclass
 @Data
 public abstract class Users {
+	
 	@NotBlank
 	@NotEmpty
 	@NotNull
 	@Email(regexp = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",message = "Invalid username Id, you can use you email as your username")
-	@Column(unique = true)
+	@Column(unique = true)	
    private String username;
+	
 	@NotBlank
 	@NotEmpty
 	@NotNull
 	//@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=])[a-zA-Z\\d@#$%^&+=]{6,15}$",message = "Invalid Password, your password should contain atleast one number, one special character, one capital letter and rest can be small letters")
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
    private String password;
 	
-	private String role;
+   private String role;
+	
+   @JsonProperty(access = Access.READ_ONLY)
+   private String sessionId;
+	
 }
