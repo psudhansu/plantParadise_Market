@@ -1,9 +1,17 @@
 <h1 align="center">Nursery Management System</h1>
 
-<h2 align="center">Plant Paradise System</h2>
+<h2 align="center">
+  Plant Paradise Market
+</h2> 
+
+<p align="center">
+  <img src="https://github.com/psudhansu/dangerous-powder-9842/assets/111189783/a29e50f8-0966-4c84-81d1-f2112ea7a365)" alt="Description of the image" style="display: block; margin: 0 auto;">
+</p>
+
 
 REST API for an Online Nursery Management System that allows customers to view and buy the list of plants, seeds, and planters. 
 The application also includes user and admin validation and authentication.
+
 ## ER Diagram
 ![ErDiagram](https://github.com/psudhansu/dangerous-powder-9842/assets/119405182/624df877-b898-4984-9f61-6198af93c0a8)
 
